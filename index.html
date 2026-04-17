@@ -3,188 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宏日升光學 - 官方社群連結</title>
+    <title>宏日升光學 - 社群連結導航</title>
     
-    <meta property="og:title" content="宏日升光學">
-    <meta property="og:description" content="專業光學鏡片·歡迎點擊連結與我們聯繫">
-    <meta property="og:image" content="https://wind20000202.github.io/hrs-vision/logo.png">
-    <meta property="og:url" content="https://wind20000202.github.io/hrs-vision/">
-    <meta property="og:type" content="website">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --corp-bg: #0a1930; 
-            --corp-light-blue: #7dd3fc; 
-            --primary-text: #ffffff;
-            --secondary-text: rgba(255, 255, 255, 0.7);
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(125, 211, 252, 0.15);
-            --line-color: #06c755;
-            --fb-color: #1877f2;
-            --ig-color: #e4405f;
+            --bg-deep: #0a1930;
+            --main-card-base: rgba(255, 255, 255, 0.01); 
+            --glass-white: rgba(255, 255, 255, 0.03);
+            --border-highlight: rgba(255, 255, 255, 0.08);
+            --scroll-pos: 50%;
+
+            --color-web: #00f2ff; 
+            --color-line: #06c755;
+            --color-fb: #1877f2;
+            --color-ig: #e4405f;
         }
 
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--corp-bg);
+            background-color: var(--bg-deep);
             background-image: 
-                linear-gradient(135deg, rgba(125, 211, 252, 0.02) 25%, transparent 25%, transparent 50%, rgba(125, 211, 252, 0.02) 50%, rgba(125, 211, 252, 0.02) 75%, transparent 75%, transparent 100%);
-            background-size: 120px 120px;
+                radial-gradient(circle at 50% var(--scroll-pos), rgba(0, 242, 255, 0.1) 0%, transparent 75%),
+                linear-gradient(135deg, rgba(125, 211, 252, 0.03) 25%, transparent 25%, transparent 50%, rgba(125, 211, 252, 0.03) 50%, rgba(125, 211, 252, 0.03) 75%, transparent 75%, transparent 100%);
+            background-size: cover, 80px 80px;
+            background-attachment: fixed;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: var(--primary-text);
-            padding: 20px;
-            box-sizing: border-box;
+            color: #fff;
+            padding: 40px 20px;
+            overflow-x: hidden;
         }
 
-        .container {
-            background: rgba(16, 43, 85, 0.4);
-            padding: 3.5rem 2rem;
-            border-radius: 32px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
-            text-align: center;
-            max-width: 960px;
+        .main-container {
+            background: var(--main-card-base);
+            max-width: 1100px;
             width: 100%;
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(15px);
+            padding: 80px 40px;
+            border-radius: 80px;
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            box-shadow: 
+                0 0 120px rgba(0, 0, 0, 0.4),
+                inset 0 0 20px rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
-        .logo-section { margin-bottom: 2.5rem; }
         .brand-logo {
-            width: 90px; height: 90px;
-            border-radius: 22px;
-            background: white; padding: 5px;
-            box-shadow: 0 0 25px rgba(125, 211, 252, 0.2);
+            width: 105px; height: 105px;
+            border-radius: 30px;
+            background: #fff;
+            padding: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
             object-fit: contain;
         }
 
-        h1 { font-size: 2.2rem; color: var(--corp-light-blue); letter-spacing: 3px; margin: 1.2rem 0 0.8rem; }
-        .subtitle { color: var(--secondary-text); font-size: 1rem; margin-bottom: 3rem; font-weight: 300; line-height: 1.6; }
+        h1 {
+            font-size: 2.7rem;
+            letter-spacing: 15px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            background: linear-gradient(to bottom, #fff 50%, rgba(255,255,255,0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 5px;
+            margin-bottom: 70px;
+        }
 
         .qr-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
         }
 
-        .qr-card {
-            background: var(--card-bg);
-            padding: 2.5rem 1.5rem;
-            border-radius: 24px;
-            border: 1px solid var(--card-border);
+        .qr-item {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 45px 20px;
+            border-radius: 45px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .qr-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.08); }
-
-        .qr-card h3 {
-            margin: 0 0 1.8rem 0;
-            font-size: 1.5rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
+        .qr-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .qr-card h3 i {
-            font-size: 2.2rem;
-            line-height: 1;
+        .qr-item i {
+            font-size: 2.5rem;
+            margin-bottom: 18px;
         }
 
-        .qr-code {
-            width: 180px; height: 180px;
-            background: white; border-radius: 18px;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 1.8rem;
-            padding: 10px;
+        .qr-box {
+            background: #fff;
+            padding: 12px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 2;
         }
-        .qr-code img { width: 100%; height: 100%; }
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            width: 90%;
-            padding: 0.9rem 0;
+        .qr-box img { width: 150px; height: 150px; display: block; }
+
+        .action-btn {
+            width: 85%;
+            font-size: 0.9rem;
+            padding: 11px 0;
             border-radius: 50px;
-            color: white;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            letter-spacing: 1px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
         }
 
-        .btn i { font-size: 1.2rem; }
+        .website:hover .action-btn { background: var(--color-web); color: #000; font-weight: bold; box-shadow: 0 0 25px var(--color-web); border-color: transparent; }
+        .line:hover .action-btn { background: var(--color-line); color: #fff; box-shadow: 0 0 20px rgba(6, 199, 85, 0.5); border-color: transparent; }
+        .facebook:hover .action-btn { background: var(--color-fb); color: #fff; box-shadow: 0 0 20px rgba(24, 119, 242, 0.5); border-color: transparent; }
+        .instagram:hover .action-btn { background: var(--color-ig); color: #fff; box-shadow: 0 0 20px rgba(228, 64, 95, 0.5); border-color: transparent; }
 
-        .line h3 i, .line h3 span { color: var(--line-color); }
-        .line .btn { background-color: var(--line-color); }
-        
-        .fb h3 i, .fb h3 span { color: var(--fb-color); }
-        .fb .btn { background-color: var(--fb-color); }
-        
-        .ig h3 i, .ig h3 span { color: var(--ig-color); }
-        .ig .btn { background-color: var(--ig-color); }
+        .website i { color: var(--color-web); text-shadow: 0 0 15px rgba(0, 242, 255, 0.4); }
+        .line i { color: var(--color-line); }
+        .facebook i { color: var(--color-fb); }
+        .instagram i { color: var(--color-ig); }
 
-        .btn:hover { filter: brightness(1.1); transform: scale(1.05); }
-
-        @media (max-width: 650px) {
-            .qr-grid { gap: 1.5rem; }
-            .btn { width: 100%; }
+        @media (max-width: 600px) {
+            .main-container { padding: 50px 20px; border-radius: 0; background: transparent; backdrop-filter: none; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header class="logo-section">
-        <img src="logo.png" alt="HRS Logo" class="brand-logo">
-        <h1>宏日升光學</h1>
-        <p class="subtitle">專業光學鏡片<br>掃描 QR Code 或點擊按鈕與我們聯繫</p>
-    </header>
+<div class="main-container">
+    <img src="logo.png" alt="HRS Logo" class="brand-logo">
+    <h1>宏日升光學</h1>
+    <p class="subtitle">專業光學鏡片<br>掃描 QR Code 或點擊頁面與我們聯繫</p>
 
-    <main class="qr-grid">
-        <section class="qr-card line">
-            <h3><i class="fa-brands fa-line"></i><span>LINE</span></h3>
-            <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/R/ti/p/@738nfoif" alt="LINE QR">
-            </div>
-            <a href="https://line.me/R/ti/p/@738nfoif" class="btn" target="_blank">
-                <i class="fa-solid fa-user-plus"></i>加入好友
-            </a>
-        </section>
+    <div class="qr-grid">
+        <a href="http://comin.tw" class="qr-item website" target="_blank">
+            <i class="fa-solid fa-globe"></i>
+            <h3>官方網站</h3>
+            <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://comin.tw" alt="Web"></div>
+            <div class="action-btn">前往瀏覽</div>
+        </a>
 
-        <section class="qr-card fb">
-            <h3><i class="fa-brands fa-facebook"></i><span>Facebook</span></h3>
-            <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.facebook.com/share/17MJ18QCdR/" alt="FB QR">
-            </div>
-            <a href="https://www.facebook.com/share/17MJ18QCdR/" class="btn" target="_blank">
-                <i class="fa-solid fa-magnifying-glass"></i>瀏覽粉專
-            </a>
-        </section>
+        <a href="https://line.me/R/ti/p/@738nfoif" class="qr-item line" target="_blank">
+            <i class="fa-brands fa-line"></i>
+            <h3>LINE</h3>
+            <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/R/ti/p/@738nfoif" alt="LINE"></div>
+            <div class="action-btn">加入好友</div>
+        </a>
 
-        <section class="qr-card ig">
-            <h3><i class="fa-brands fa-instagram"></i><span>Instagram</span></h3>
-            <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.instagram.com/hrs.vision?igsh=MTBkc3ptaTl1Y2xqZg==" alt="IG QR">
-            </div>
-            <a href="https://www.instagram.com/hrs.vision?igsh=MTBkc3ptaTl1Y2xqZg==" class="btn" target="_blank">
-                <i class="fa-solid fa-heart"></i>追蹤動態
-            </a>
-        </section>
-    </main>
+        <a href="https://www.facebook.com/share/17MJ18QCdR/" class="qr-item facebook" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+            <h3>Facebook</h3>
+            <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.facebook.com/share/17MJ18QCdR/" alt="FB"></div>
+            <div class="action-btn">訪問專頁</div>
+        </a>
+
+        <a href="https://www.instagram.com/hrs.vision?igsh=MTBkc3ptaTl1Y2xqZg==" class="qr-item instagram" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            <h3>Instagram</h3>
+            <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.instagram.com/hrs.vision?igsh=MTBkc3ptaTl1Y2xqZg==" alt="IG"></div>
+            <div class="action-btn">追蹤動態</div>
+        </a>
+    </div>
 </div>
+
+<script>
+    const updateScroll = () => {
+        const scrolled = window.scrollY;
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        const percentage = maxScroll > 0 ? (scrolled / maxScroll) * 100 : 50;
+        document.documentElement.style.setProperty('--scroll-pos', `${percentage}%`);
+    };
+    window.addEventListener('scroll', updateScroll);
+    window.addEventListener('resize', updateScroll);
+    updateScroll();
+</script>
 
 </body>
 </html>
