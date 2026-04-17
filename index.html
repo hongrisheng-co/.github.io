@@ -179,7 +179,6 @@
             border-color: rgba(255, 255, 255, 0.2); 
         }
 
-        /* 圖示容器修正 */
         .icon-wrapper {
             height: 60px;
             width: 60px;
@@ -189,23 +188,20 @@
             margin-bottom: 12px;
         }
 
-        /* 統一字體圖示與圖片圖示的初始狀態 */
         .qr-item i, .custom-icon {
             transition: all 0.4s ease;
-            filter: brightness(0) invert(1); /* 預設白色 */
+            filter: brightness(0) invert(1);
             color: #fff;
         }
 
         .qr-item i { font-size: 2.5rem; }
         
-        /* 修正圖片 logo 大小，防止爆衝 */
         .custom-icon {
             width: 50px; 
             height: 50px;
             object-fit: contain;
         }
 
-        /* 移入時的品牌顏色發光特效 */
         .facebook:hover i {
             color: var(--color-fb);
             filter: brightness(1) drop-shadow(0 0 15px var(--color-fb));
