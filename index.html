@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>宏日升光學 - 社群連結導航</title>
+    <title>宏日升光學 - 官方社群連結導航</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -12,14 +12,13 @@
         :root {
             --bg-deep: #0a1930;
             --main-card-base: rgba(255, 255, 255, 0.01); 
-            --glass-white: rgba(255, 255, 255, 0.03);
-            --border-highlight: rgba(255, 255, 255, 0.08);
             --scroll-pos: 50%;
-
-            --color-web: #00f2ff; 
+            --color-starteye: #c2d3e5; 
+            --color-web: rgba(0, 242, 255, 0.6); 
             --color-line: #06c755;
             --color-fb: #1877f2;
             --color-ig: #e4405f;
+            --hrs-glow: rgba(29, 78, 216, 0.6);
         }
 
         body {
@@ -28,7 +27,7 @@
             background-image: 
                 radial-gradient(circle at 50% var(--scroll-pos), rgba(0, 242, 255, 0.1) 0%, transparent 75%),
                 linear-gradient(135deg, rgba(125, 211, 252, 0.03) 25%, transparent 25%, transparent 50%, rgba(125, 211, 252, 0.03) 50%, rgba(125, 211, 252, 0.03) 75%, transparent 75%, transparent 100%);
-            background-size: cover, 80px 80px;
+            background-size: cover, 120px 120px;
             background-attachment: fixed;
             margin: 0;
             display: flex;
@@ -36,159 +35,329 @@
             align-items: center;
             min-height: 100vh;
             color: #fff;
-            padding: 40px 20px;
-            overflow-x: hidden;
+            padding: 60px 20px;
+            box-sizing: border-box;
         }
 
         .main-container {
             background: var(--main-card-base);
             max-width: 1100px;
             width: 100%;
-            padding: 80px 40px;
-            border-radius: 80px;
+            padding: 60px 40px;
+            border-radius: 60px;
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            box-shadow: 
-                0 0 120px rgba(0, 0, 0, 0.4),
-                inset 0 0 20px rgba(255, 255, 255, 0.02);
+            box-shadow: 0 0 120px rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
+        }
+
+        .brand-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+
+        .logo-glass-frame {
+            width: 135px; height: 135px;
+            border-radius: 35px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4), 0 0 30px var(--hrs-glow);
             position: relative;
-            z-index: 1;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .logo-glass-frame::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 5s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-150%) rotate(45deg); }
+            100% { transform: translateX(150%) rotate(45deg); }
         }
 
         .brand-logo {
-            width: 105px; height: 105px;
-            border-radius: 30px;
-            background: #fff;
-            padding: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 40px rgba(0, 242, 255, 0.2);
+            width: 105px;
             object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.2));
+            z-index: 2;
         }
 
-        h1 {
-            font-size: 2.7rem;
-            letter-spacing: 15px;
-            margin-bottom: 15px;
-            font-weight: 700;
+        .brand-link-wrapper {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px 35px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            gap: 20px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .brand-link-wrapper:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--color-web);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 242, 255, 0.15);
+        }
+
+        .mini-qr {
+            width: 55px; height: 55px;
+            background: white;
+            padding: 3px;
+            border-radius: 10px;
+            opacity: 0.9;
+        }
+
+        .brand-text-content { text-align: left; }
+
+        .main-title {
+            font-size: 2.2rem;
+            letter-spacing: 12px;
+            margin: 0;
             background: linear-gradient(to bottom, #fff 50%, rgba(255,255,255,0.4) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .url-hint {
+            font-size: 0.85rem;
+            color: var(--color-web);
+            letter-spacing: 3px;
+            display: block;
+            margin-top: 5px;
+            font-weight: 500;
+            opacity: 0.6;
         }
 
         .subtitle {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.3);
-            letter-spacing: 5px;
-            margin-bottom: 70px;
+            letter-spacing: 4px;
+            margin: 40px 0 50px 0;
+            line-height: 1.6;
         }
 
         .qr-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
+            margin-bottom: 25px;
+            align-items: stretch;
         }
 
         .qr-item {
             background: rgba(255, 255, 255, 0.02);
-            padding: 45px 20px;
-            border-radius: 45px;
+            padding: 35px 20px;
+            border-radius: 40px;
             border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .qr-item:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        .qr-item:hover { 
+            transform: translateY(-8px); 
+            background: rgba(255, 255, 255, 0.06); 
+            border-color: rgba(255, 255, 255, 0.2); 
         }
 
-        .qr-item i {
-            font-size: 2.5rem;
-            margin-bottom: 18px;
+        /* 圖示容器修正 */
+        .icon-wrapper {
+            height: 60px;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
         }
+
+        /* 統一字體圖示與圖片圖示的初始狀態 */
+        .qr-item i, .custom-icon {
+            transition: all 0.4s ease;
+            filter: brightness(0) invert(1); /* 預設白色 */
+            color: #fff;
+        }
+
+        .qr-item i { font-size: 2.5rem; }
+        
+        /* 修正圖片 logo 大小，防止爆衝 */
+        .custom-icon {
+            width: 50px; 
+            height: 50px;
+            object-fit: contain;
+        }
+
+        /* 移入時的品牌顏色發光特效 */
+        .facebook:hover i {
+            color: var(--color-fb);
+            filter: brightness(1) drop-shadow(0 0 15px var(--color-fb));
+            transform: scale(1.1);
+        }
+
+        .instagram:hover i {
+            color: var(--color-ig);
+            filter: brightness(1) drop-shadow(0 0 15px var(--color-ig));
+            transform: scale(1.1);
+        }
+
+        .line:hover i {
+            color: var(--color-line);
+            filter: brightness(1) drop-shadow(0 0 15px var(--color-line));
+            transform: scale(1.1);
+        }
+
+        .starteye:hover .custom-icon {
+            filter: brightness(1) invert(0) drop-shadow(0 0 15px var(--color-starteye));
+            transform: scale(1.1);
+        }
+
+        .qr-item h3 { margin: 0 0 15px 0; font-size: 1.2rem; letter-spacing: 2px; }
+
+        .region-tag {
+            font-size: 0.75rem;
+            padding: 3px 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        .new-tag { color: var(--color-starteye); border: 1px solid rgba(194, 211, 229, 0.3); background: rgba(194, 211, 229, 0.05); }
+        .fb-tag { color: var(--color-fb); border: 1px solid rgba(24, 119, 242, 0.3); background: rgba(24, 119, 242, 0.05); }
+        .ig-tag { color: var(--color-ig); border: 1px solid rgba(228, 64, 95, 0.3); background: rgba(228, 64, 95, 0.05); }
+        .line-tag { color: var(--color-line); border: 1px solid rgba(6, 199, 85, 0.2); background: rgba(6, 199, 85, 0.05); }
 
         .qr-box {
             background: #fff;
             padding: 12px;
-            border-radius: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 2;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            margin-top: auto;
         }
-
-        .qr-box img { width: 150px; height: 150px; display: block; }
+        .qr-box img { width: 140px; height: 140px; display: block; }
 
         .action-btn {
-            width: 85%;
-            font-size: 0.9rem;
-            padding: 11px 0;
+            width: 90%;
+            font-size: 0.85rem;
+            padding: 10px 0;
             border-radius: 50px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
+            transition: 0.3s;
             color: rgba(255, 255, 255, 0.5);
             letter-spacing: 2px;
         }
 
-        .website:hover .action-btn { background: var(--color-web); color: #000; font-weight: bold; box-shadow: 0 0 25px var(--color-web); border-color: transparent; }
-        .line:hover .action-btn { background: var(--color-line); color: #fff; box-shadow: 0 0 20px rgba(6, 199, 85, 0.5); border-color: transparent; }
-        .facebook:hover .action-btn { background: var(--color-fb); color: #fff; box-shadow: 0 0 20px rgba(24, 119, 242, 0.5); border-color: transparent; }
-        .instagram:hover .action-btn { background: var(--color-ig); color: #fff; box-shadow: 0 0 20px rgba(228, 64, 95, 0.5); border-color: transparent; }
+        .starteye:hover .action-btn { background: var(--color-starteye); color: #0a1930; box-shadow: 0 0 20px var(--color-starteye); font-weight: bold; }
+        .line:hover .action-btn { background: var(--color-line); color: #fff; box-shadow: 0 0 20px rgba(6, 199, 85, 0.5); }
+        .facebook:hover .action-btn { background: var(--color-fb); color: #fff; box-shadow: 0 0 20px rgba(24, 119, 242, 0.5); }
+        .instagram:hover .action-btn { background: var(--color-ig); color: #fff; box-shadow: 0 0 20px rgba(228, 64, 95, 0.5); }
 
-        .website i { color: var(--color-web); text-shadow: 0 0 15px rgba(0, 242, 255, 0.4); }
-        .line i { color: var(--color-line); }
-        .facebook i { color: var(--color-fb); }
-        .instagram i { color: var(--color-ig); }
-
-        @media (max-width: 600px) {
-            .main-container { padding: 50px 20px; border-radius: 0; background: transparent; backdrop-filter: none; }
+        @media (max-width: 900px) { .qr-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 650px) {
+            .main-container { padding: 40px 15px; border-radius: 0; background: transparent; backdrop-filter: none; }
+            .main-title { font-size: 1.6rem; letter-spacing: 6px; }
+            .brand-link-wrapper { padding: 10px 20px; gap: 12px; }
+            .qr-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
 <div class="main-container">
-    <img src="logo.png" alt="HRS Logo" class="brand-logo">
-    <h1>宏日升光學</h1>
-    <p class="subtitle">專業光學鏡片<br>掃描 QR Code 或點擊頁面與我們聯繫</p>
+    <header class="brand-section">
+        <div class="logo-glass-frame">
+            <img src="logo.png" alt="HRS Logo" class="brand-logo">
+        </div>
+        
+        <a href="http://comin.tw" class="brand-link-wrapper" target="_blank">
+            <div class="mini-qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=http://comin.tw" style="width:100%" alt="Web">
+            </div>
+            <div class="brand-text-content">
+                <h1 class="main-title">宏日升光學</h1>
+                <span class="url-hint">comin.tw <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+            </div>
+        </a>
+    </header>
+
+    <p class="subtitle">專業光學鏡片<br>請選擇服務項目或透過社群與我們聯繫</p>
 
     <div class="qr-grid">
-        <a href="http://comin.tw" class="qr-item website" target="_blank">
-            <i class="fa-solid fa-globe"></i>
-            <h3>官方網站</h3>
-            <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://comin.tw" alt="Web"></div>
-            <div class="action-btn">前往瀏覽</div>
-        </a>
-
-        <a href="https://line.me/R/ti/p/@738nfoif" class="qr-item line" target="_blank">
-            <i class="fa-brands fa-line"></i>
-            <h3>LINE</h3>
-            <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/R/ti/p/@738nfoif" alt="LINE"></div>
-            <div class="action-btn">加入好友</div>
+        <a href="https://starteye.com.tw/index.php#sec_tech" class="qr-item starteye" target="_blank">
+            <div class="region-tag new-tag">特別專利技術</div>
+            <div class="icon-wrapper">
+                <img src="LAPIS logo.png" alt="LAPIS Logo" class="custom-icon">
+            </div>
+            <h3>藍ビス</h3>
+            <div class="qr-box">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://starteye.com.tw/index.php#sec_tech" alt="藍ビス">
+            </div>
+            <div class="action-btn">立即前往</div>
         </a>
 
         <a href="https://www.facebook.com/share/17MJ18QCdR/" class="qr-item facebook" target="_blank">
-            <i class="fa-brands fa-facebook"></i>
+            <div class="region-tag fb-tag">官方社群專頁</div>
+            <div class="icon-wrapper">
+                <i class="fa-brands fa-facebook"></i>
+            </div>
             <h3>Facebook</h3>
             <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.facebook.com/share/17MJ18QCdR/" alt="FB"></div>
             <div class="action-btn">訪問專頁</div>
         </a>
 
         <a href="https://www.instagram.com/hrs.vision?igsh=MTBkc3ptaTl1Y2xqZg==" class="qr-item instagram" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
+            <div class="region-tag ig-tag">精選產品動態</div>
+            <div class="icon-wrapper">
+                <i class="fa-brands fa-instagram"></i>
+            </div>
             <h3>Instagram</h3>
             <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.instagram.com/hrs.vision?igsh=MTBkc3ptaTl1Y2xqZg==" alt="IG"></div>
             <div class="action-btn">追蹤動態</div>
+        </a>
+    </div>
+
+    <div class="qr-grid">
+        <a href="https://line.me/R/ti/p/@738nfoif" class="qr-item line" target="_blank">
+            <div class="region-tag line-tag">台北總部客服</div>
+            <div class="icon-wrapper"><i class="fa-brands fa-line"></i></div>
+            <h3>LINE</h3>
+            <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/R/ti/p/@738nfoif" alt="LINE台北"></div>
+            <div class="action-btn">加入好友 / 訂製鏡片</div>
+        </a>
+
+        <a href="https://line.me/R/ti/p/@772uergg" class="qr-item line" target="_blank">
+            <div class="region-tag line-tag">台中分部客服</div>
+            <div class="icon-wrapper"><i class="fa-brands fa-line"></i></div>
+            <h3>LINE</h3>
+            <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/R/ti/p/@772uergg" alt="LINE台中"></div>
+            <div class="action-btn">加入好友 / 訂製鏡片</div>
+        </a>
+
+        <a href="https://line.me/R/ti/p/@169uihsg" class="qr-item line" target="_blank">
+            <div class="region-tag line-tag">高雄分部客服</div>
+            <div class="icon-wrapper"><i class="fa-brands fa-line"></i></div>
+            <h3>LINE</h3>
+            <div class="qr-box"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://line.me/R/ti/p/@169uihsg" alt="LINE高雄"></div>
+            <div class="action-btn">加入好友 / 訂製鏡片</div>
         </a>
     </div>
 </div>
